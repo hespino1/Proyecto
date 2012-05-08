@@ -12,11 +12,12 @@ class SessionsController < ApplicationController
      pass = params[:password]
      @user = User.find_by_correo(correo)
        if @user.nil?
-         redirect_to '/sessions/index'
+         redirect_to('/sessions/index', :alert => "El usuario no existe")
+
        elsif @user.password.eql? pass
          set_nombre(@user.nombre)
          set_id(@user.id)
-         redirect_to root_path, :notice=> "sisas"
+         redirect_to root_path, :notice=> "Bienvenido"
        else
          redirect_to('/sessions/index', :alert =>"Email o contrasena erradas" )
        end

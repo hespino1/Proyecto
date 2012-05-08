@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_filter :logged_user, :only=>[:index, :show,:edit, :update, :destroy]
+
+
   # GET /users
   # GET /users.json
   def index
@@ -76,6 +79,15 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to users_url }
+
+    end
+  end
+
+  private
+
+  def logged_user
+    if signed_in?.eql? false
+      redirect_to(root_path, :alert => "tiene que estar logueado")
 
     end
   end
