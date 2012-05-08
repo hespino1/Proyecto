@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+body{
+    background:  #f5f5f5 ;
+
+}
+
+#header {
+
+    background-color:#F0EEEE;
+    margin-top: -20px;
+    min-height: 100px;
+    padding-left: 10%;
+    margin-left: -6px;
+    margin-right: -6px;
+    border-bottom:solid gray;
+    padding-top: 15px;
+}
+
+#content{
+    width: 80%;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    min-height: 500px;
+    padding: 20px;
+    border-bottom:solid gray;
+}
+
+#content .user_options{
+    width: 20%;
+    background: #F0EEEE;
+    float: right;
+    border-radius: 5px;
+    margin-top: -20px;
+    border-bottom: solid gray;
+
+
+}
+
+#content .user_options ul{
+    list-style: none;
+    display: inline-block;
+
+}
+
+#content .user_options ul li{
+    display: inline-block;
+    text-decoration: none;
+    margin: auto;
+
+}
+
+#content .user_options ul li a{
+    text-decoration: none;
+    color: blue;
+    padding: 18px;
+
+
+}
+
+#content .user_options ul li a:hover{
+    color: white;
+    background: blue;
+    padding: 18px;
+
+
+}
+
+
+#footer{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -21px;
+    background-color:transparent;  ;
+    min-height: 100px;
+    padding: 20px;
+}
+
+#footer .footer.left{
+    float: left;
+    width: 200px;
+}
+
+#footer .footer.right{
+    float: right;
+    width: 200px;
+}
+
+
+
+#notice {
+    color: green;
+}
+
+
+/* flash */
+.error, .alert, .notice, .success, .info {text-align:center;padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
+.error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
+.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}
+.success {background:#e6efc2;color:#264409;border-color:#c6d880;}
+.info {background:#d5edf8;color:#205791;border-color:#92cae4;}
+.error a, .alert a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+.info a {color:#205791;}

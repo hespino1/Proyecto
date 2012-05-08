@@ -1,0 +1,32 @@
+
+<div class="login">
+    <table>
+      <%= form_tag('/sessions/new', :method => 'get') do %>
+      <tr>
+        <td colspan="2">Iniciar Sesión</td>
+      </tr>
+      <tr>
+         <td><%= label_tag(:correo, "Correo:") %></td>
+         <td><%= text_field_tag(:correo) %></td>
+      </tr>
+      <tr>
+         <td><%= label_tag(:password, "Password:") %></td>
+         <td><%= password_field_tag(:password) %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><%= submit_tag 'Aceptar' %></td>
+
+      </tr>
+          <tr>
+            <td></td>
+            <td><%= link_to 'Registrar', '/users/new'%></td>
+
+          </tr>
+
+      <% end  %>
+
+    </table>
+
+
+</div>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>P2</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+    <div id="header">
+      <h1>SocialSports</h1>
+      <p>La mejor forma de armar partidos</p>
+
+    </div>
+    <div id="content">
+      <div class="user_options">
+        <ul>
+           <li>
+              <%if signed_in? %>
+                 <%= link_to get_nombre ,user_path(get_id)%>
+              <%end%>
+            </li>
+            <li><%if signed_in? %>
+                  <%= link_to 'Salir','/sessions/destroy' %>
+              <% else %>
+                  <%=  link_to 'Entrar','/sessions/index'%>
+              <% end %>
+            </li>
+        </ul>
+      </div>
+      <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value.capitalize %></div>
+      <%  end %>
+          <script type="text/javascript">
+              setTimeout("new Effect.Fade('flash');", 15000)
+          </script>
+
+
+      <%= yield %>
+    </div>
+    <div id="footer">
+        <div class="footer left">
+          <ul>
+            <li><%= link_to 'About','/pages/about' %></li>
+
+          </ul>
+        </div>
+        <div class="footer right">
+          Desarrollado por
+          <ul>
+            <li> Hugo </li>
+            <li> Canada </li>
+            <li>Carolina</li>
+          </ul>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
