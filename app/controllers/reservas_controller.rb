@@ -6,7 +6,7 @@ class ReservasController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @reservas }
+
     end
   end
 
@@ -17,7 +17,7 @@ class ReservasController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @reserva }
+
     end
   end
 
@@ -28,7 +28,7 @@ class ReservasController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @reserva }
+
     end
   end
 
@@ -46,11 +46,10 @@ class ReservasController < ApplicationController
 
     respond_to do |format|
       if @reserva.save
-        format.html { redirect_to user_path(get_id), notice: 'Reserva was successfully created.' }
-        format.json { render json: @reserva, status: :created, location: @reserva }
+        format.html { redirect_to @reserva, :notice => 'Reserva was successfully created.' }
       else
-        format.html { render action: "new" }
-        format.json { render json: @reserva.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+
       end
     end
   end
@@ -62,11 +61,11 @@ class ReservasController < ApplicationController
 
     respond_to do |format|
       if @reserva.update_attributes(params[:reserva])
-        format.html { redirect_to @reserva, notice: 'Reserva was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to @reserva, :notice => 'Reserva was successfully updated.' }
+
       else
-        format.html { render action: "edit" }
-        format.json { render json: @reserva.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+
       end
     end
   end
@@ -79,7 +78,7 @@ class ReservasController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to reservas_url }
-      format.json { head :no_content }
+
     end
   end
 end
