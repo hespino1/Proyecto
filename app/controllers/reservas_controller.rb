@@ -46,7 +46,7 @@ class ReservasController < ApplicationController
 
     respond_to do |format|
       if @reserva.save
-        format.html { redirect_to @reserva, :notice => 'Reserva was successfully created.' }
+        format.html { redirect_to user_path(get_id), :notice => 'Reserva was successfully created.' }
       else
         format.html { render :action => "new" }
 
