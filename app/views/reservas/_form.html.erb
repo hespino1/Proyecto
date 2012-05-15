@@ -20,9 +20,8 @@
     <%= f.text_field :hora %>
   </div>
   <div class="field">
-    <%= f.label :id_user %>
-    <%= f.text_field :id_user, :value => get_id%>
-  </div>  
+    <% f.hidden_field :id_user, :value => get_id%>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

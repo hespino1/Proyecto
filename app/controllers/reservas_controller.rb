@@ -40,6 +40,8 @@ class ReservasController < ApplicationController
   # POST /reservas
   # POST /reservas.json
   def create
+    params[:reserva][:id_user] = get_id
+    puts params
     @reserva = Reserva.new(params[:reserva])
 
     respond_to do |format|

@@ -14,9 +14,26 @@
   <b>Correo:</b>
   <%= @user.correo %>
 </p>
-<h1>reservas activas</h1>
-<%= @reservas.fecha %>
-<%= @reservas.hora %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Editar Perfil', edit_user_path(@user) %>
+<%= link_to 'Atras', users_path %>
+
+<h1>Reservas Activas</h1>
+    <table>
+      <tr>
+        <th>Deporte</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+      </tr>
+      <% @reservas.each do |reserva|  %>
+
+      <tr>
+        <td>Futbol</td>
+        <td><%= reserva.fecha %></td>
+        <td><%= reserva.hora %></td>
+      </tr>
+
+      <%end%>
+    </table>
+<%= link_to 'Nueva Reserva', new_reserva_path %>
+
