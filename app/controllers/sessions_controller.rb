@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
        elsif @user.password.eql? pass
          set_nombre(@user.nombre)
          set_id(@user.id)
-         redirect_to root_path, :notice=> "Bienvenido"
+         redirect_to user_path(get_id), :notice=> "Bienvenido"
        else
          redirect_to('/sessions/index', :alert =>"Email o contrasena erradas" )
        end

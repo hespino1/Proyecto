@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :nombre
       t.integer :cedula
       t.string :correo
-      t.string :password
+
 
       t.timestamps
     end
