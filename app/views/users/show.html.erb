@@ -14,7 +14,9 @@
   <b>Correo:</b>
   <%= @user.correo %>
 </p>
-
+<h1>reservas activas</h1>
+<%= @reservas.fecha %>
+<%= @reservas.hora %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

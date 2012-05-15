@@ -1,4 +1,6 @@
 P2::Application.routes.draw do
+  resources :reservas
+
   get "sessions/index"
   get "sessions/new"
   get "sessions/destroy"

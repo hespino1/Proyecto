@@ -1,0 +1,29 @@
+<%= form_for(@reserva) do |f| %>
+  <% if @reserva.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reserva.errors.count, "error") %> prohibited this reserva from being saved:</h2>
+
+      <ul>
+      <% @reserva.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :hora %><br />
+    <%= f.text_field :hora %>
+  </div>
+  <div class="field">
+    <%= f.label :id_user %>
+    <%= f.text_field :id_user, :value => get_id%>
+  </div>  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

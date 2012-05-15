@@ -11,7 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120508184146) do
+ActiveRecord::Schema.define(:version => 20120514212925) do
+
+# Could not dump table "reservas" because of following StandardError
+#   Unknown type 'reference' for column 'user'
 
   create_table "users", :force => true do |t|
     t.string   "nombre"

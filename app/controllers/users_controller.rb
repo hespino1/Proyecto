@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :logged_user, :only=>[:index, :show,:edit, :update, :destroy]
+ before_filter :logged_user, :only => [:index, :show, :edit, :update, :destroy]
 
 
   # GET /users
@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @reservas = Reserva.find_by_id_user(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -47,7 +48,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, :notice=> 'User was successfully created.' }
+        format.html { redirect_to '/sessions/index', :notice=> 'User was successfully created.' }
         else
         format.html { render :action=> "new" }
 
