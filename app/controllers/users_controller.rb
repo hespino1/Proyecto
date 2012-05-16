@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
  before_filter :logged_user, :only => [:index, :show, :edit, :update, :destroy]
+ #before_filter :correct_user
 
 
   # GET /users
@@ -48,7 +49,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to '/sessions/index', :notice=> 'User was successfully created.' }
+        format.html { redirect_to '/sessions/index', :notice=> 'El usuario fue creado exitosamente' }
         else
         format.html { render :action=> "new" }
 
