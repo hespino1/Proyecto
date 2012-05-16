@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#content .user {
+  width: 90%;
+  margin: auto;
+}
+
+#content .user_profile{
+  width: 50%;
+  float: left;
+}
+
 #content .user_profile table {
 
    border-spacing: 0;
@@ -11,7 +21,7 @@
   border: 1px solid #dcdcdc;
   padding: 5px;
   text-align: center;
-  margin: -2px;
+
 }
 
 #content .user_profile table tr th{
@@ -24,4 +34,10 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='green',endColorstr='#006400')";
   color: white;
 
+}
+
+
+#content  .user_logo{
+  width: 50%;
+  float: right;
 }

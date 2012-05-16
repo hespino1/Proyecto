@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to '/sessions/index', :notice=> 'User was successfully created.' }
+        format.html { redirect_to '/sessions/index', :notice=> 'El usuario fue creado exitosamente' }
         else
         format.html { render :action=> "new" }
 
