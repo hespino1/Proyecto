@@ -1,4 +1,6 @@
 class ReservasController < ApplicationController
+  before_filter :logged_user
+
   # GET /reservas
   # GET /reservas.json
   def index
@@ -81,4 +83,15 @@ class ReservasController < ApplicationController
 
     end
   end
+
+  private
+
+  def logged_user
+    if !signed_in?
+      redirect_to '/sessions/index', :alert => "Tiene que estar logueado"
+    end
+  end
 end
+
+
+
