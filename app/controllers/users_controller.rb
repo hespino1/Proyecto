@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
  before_filter :logged_user, :only => [:index, :show, :edit, :update, :destroy]
+ #before_filter :correct_user
 
 
   # GET /users
