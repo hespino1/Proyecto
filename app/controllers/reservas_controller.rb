@@ -61,7 +61,7 @@ class ReservasController < ApplicationController
 
     respond_to do |format|
       if @reserva.update_attributes(params[:reserva])
-        format.html { redirect_to @reserva, :notice => 'Reserva was successfully updated.' }
+        format.html { redirect_to user_path(get_id), :notice => 'Su reserva fue actualizada exitosamente.' }
 
       else
         format.html { render :action => "edit" }
@@ -77,7 +77,7 @@ class ReservasController < ApplicationController
     @reserva.destroy
 
     respond_to do |format|
-      format.html { redirect_to reservas_url }
+      format.html { redirect_to user_path(get_id) }
 
     end
   end

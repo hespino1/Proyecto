@@ -9,26 +9,29 @@
 <body>
 
     <div id="header">
-      <h1>SocialSports</h1>
-      <p>La mejor forma de armar partidos</p>
+      <div class="logo">
+          <h1>SocialSports</h1>
+          <p>La mejor forma de armar partidos</p>
+      </div>
+      <div class="user_options">
+        <ul>
+          <li><%=  link_to 'Inicio', root_path %></li>
+          <li>
+            <%if signed_in? %>
+                <%= link_to get_nombre ,user_path(get_id)%>
+            <%end%>
+          </li>
+          <li><%if signed_in? %>
+                <%= link_to 'Salir','/sessions/destroy' %>
+            <% else %>
+                <%=  link_to 'Entrar','/sessions/index'%>
+            <% end %>
+          </li>
+        </ul>
+      </div>
 
     </div>
     <div id="content">
-      <div class="user_options">
-        <ul>
-           <li>
-              <%if signed_in? %>
-                 <%= link_to get_nombre ,user_path(get_id)%>
-              <%end%>
-            </li>
-            <li><%if signed_in? %>
-                  <%= link_to 'Salir','/sessions/destroy' %>
-              <% else %>
-                  <%=  link_to 'Entrar','/sessions/index'%>
-              <% end %>
-            </li>
-        </ul>
-      </div>
       <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value.capitalize %></div>
       <%  end %>
@@ -42,7 +45,7 @@
     <div id="footer">
         <div class="footer left">
           <ul>
-            <li><%= link_to 'About','/pages/about' %></li>
+            <li><%= link_to 'Acerca del proyecto','/pages/about' %></li>
 
           </ul>
         </div>
@@ -50,8 +53,8 @@
           Desarrollado por
           <ul>
             <li> Hugo </li>
-            <li> Canada </li>
-            <li>Carolina</li>
+            <li> Jonathan</li>
+
           </ul>
         </div>
     </div>

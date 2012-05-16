@@ -18,62 +18,86 @@ body{
 
 #header {
 
-    background-color:#F0EEEE;
+    background-color:green;
     margin-top: -20px;
     min-height: 100px;
     padding-left: 10%;
     margin-left: -6px;
     margin-right: -6px;
-    border-bottom:solid gray;
+    border-bottom:solid darkGreen;
     padding-top: 15px;
+    color: white;
+    background: -moz-linear-gradient(green, #006400);
+    background: -webkit-linear-gradient(green, #006400);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='green',endColorstr='#006400')";
+
 }
 
 #content{
     width: 80%;
-    margin-top: 0;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
     min-height: 500px;
     padding: 20px;
-    border-bottom:solid gray;
+    border: solid 2px darkGreen;
+    box-shadow: 6px 6px 5px darkGreen;
+    -moz-box-shadow: 6px 6px 5px darkGreen;
+    -webkit-box-shadow: 6px 6px 5px darkGreen;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
 }
 
-#content .user_options{
-    width: 20%;
-    background: #F0EEEE;
+#header .user_options{
+
+    color: white;
     float: right;
     border-radius: 5px;
-    margin-top: -20px;
-    border-bottom: solid gray;
+    margin-top: 15px;
+    border-bottom: solid #006400;
+    margin-right: 90px;
+
 
 
 }
 
-#content .user_options ul{
+#header .logo{
+    width: 50%;
+    float: left;
+
+}
+
+#header .user_options ul{
     list-style: none;
     display: inline-block;
 
 }
 
-#content .user_options ul li{
+#header .user_options ul li{
     display: inline-block;
     text-decoration: none;
     margin: auto;
 
 }
 
-#content .user_options ul li a{
+#header .user_options ul li a{
     text-decoration: none;
-    color: blue;
+    color: white;
     padding: 18px;
+    font-size: 14px;
 
 
 }
 
-#content .user_options ul li a:hover{
+#header .user_options ul li a:hover{
     color: white;
-    background: blue;
+    background: -moz-linear-gradient(green, #006400);
+    background: -webkit-linear-gradient(green, #006400);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='green',endColorstr='#006400')";
+    font-weight: bold;
     padding: 18px;
 
 
@@ -84,7 +108,7 @@ body{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -21px;
+    margin-top: 0px;
     background-color:transparent;  ;
     min-height: 100px;
     padding: 20px;

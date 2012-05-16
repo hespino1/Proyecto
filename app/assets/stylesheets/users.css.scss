@@ -1,3 +1,27 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#content .user_profile table {
+
+   border-spacing: 0;
+}
+
+#content .user_profile table tr td{
+  border: 1px solid #dcdcdc;
+  padding: 5px;
+  text-align: center;
+  margin: -2px;
+}
+
+#content .user_profile table tr th{
+  border: 1px solid #dcdcdc;
+  padding: 5px;
+  text-align: center;
+  margin: 0;
+  background: -moz-linear-gradient(green, #006400);
+  background: -webkit-linear-gradient(green, #006400);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='green',endColorstr='#006400')";
+  color: white;
+
+}

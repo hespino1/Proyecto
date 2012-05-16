@@ -1,3 +1,19 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#content .home{
+  width: 90%;
+  margin: auto;
+}
+
+#content .home .description{
+  width: 50%;
+  float: left;
+}
+
+#content .home .logo{
+  width: 50%;
+  float: right;
+
+}

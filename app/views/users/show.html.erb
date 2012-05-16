@@ -1,40 +1,49 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nombre:</b>
-  <%= @user.nombre %>
-</p>
+<div class="user_profile">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Cedula:</b>
-  <%= @user.cedula %>
-</p>
+    <p>
+      <b>Nombre:</b>
+      <%= @user.nombre %>
+    </p>
 
-<p>
-  <b>Correo:</b>
-  <%= @user.correo %>
-</p>
+    <p>
+      <b>Cedula:</b>
+      <%= @user.cedula %>
+    </p>
 
-<%= link_to 'Editar Perfil', edit_user_path(@user) %>
-<%= link_to 'Atras', users_path %>
+    <p>
+      <b>Correo:</b>
+      <%= @user.correo %>
+    </p>
 
-<h1>Reservas Activas</h1>
-    <table>
-      <tr>
-        <th>Deporte</th>
-        <th>Fecha</th>
-        <th>Hora</th>
-      </tr>
-      <% @reservas.each do |reserva|  %>
+    <%= link_to 'Editar Perfil', edit_user_path(@user) %>
+    <% link_to 'Atras', users_path %>
 
-      <tr>
-        <td>Futbol</td>
-        <td><%= reserva.fecha %></td>
-        <td><%= reserva.hora %></td>
-      </tr>
+    <h1>Reservas Activas</h1>
+        <table>
+          <tr>
+            <th>Deporte</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th colspan="2">Operaciones</th>
+          </tr>
+          <% @reservas.each do |reserva|  %>
 
-      <%end%>
-    </table>
-<%= link_to 'Nueva Reserva', new_reserva_path %>
+          <tr>
+            <td>Futbol</td>
+            <td><%= reserva.fecha %></td>
+            <td><%= reserva.hora %></td>
+            <td><%= link_to 'Editar', edit_reserva_path(reserva) %></td>
+            <td><%= link_to 'Eliminar', reserva, :confirm => 'Are you sure?', method: :delete %></td>
 
-<%= time_select :oee, :kn %>
+          </tr>
+
+          <%end%>
+        </table>
+      <br>
+      <br>
+      <br>
+    <%= link_to 'Nueva Reserva', new_reserva_path %>
+
+</div>
