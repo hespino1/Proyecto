@@ -35,7 +35,7 @@
             <td><%= reserva.fecha %></td>
             <td><%= reserva.hora %></td>
             <td><%= link_to 'Editar', edit_reserva_path(reserva) %></td>
-            <td><%= link_to 'Eliminar', reserva, :confirm => 'Are you sure?', method: :delete %></td>
+            <td><%= link_to 'Eliminar', reserva, :confirm => 'Are you sure?', :method=> :delete %></td>
 
           </tr>
 
