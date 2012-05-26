@@ -6,7 +6,6 @@ class InvitacionesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @invitaciones }
     end
   end
 
@@ -17,7 +16,7 @@ class InvitacionesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @invitacione }
+
     end
   end
 
@@ -28,7 +27,7 @@ class InvitacionesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @invitacione }
+
     end
   end
 
@@ -41,15 +40,15 @@ class InvitacionesController < ApplicationController
   # POST /invitaciones.json
   def create
     params[:invitacione][:user_origen] = get_id
-    @invitacione = Invitacione.new(params[:invitacione])
+
 
     respond_to do |format|
       if @invitacione.save
-        format.html { redirect_to @invitacione, notice: 'Invitacione was successfully created.' }
-        format.json { render json: @invitacione, status: :created, location: @invitacione }
+        format.html { redirect_to @invitacione, :notice => 'invitacione was successfully created.' }
+
       else
-        format.html { render action: "new" }
-        format.json { render json: @invitacione.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+
       end
     end
   end
@@ -61,11 +60,11 @@ class InvitacionesController < ApplicationController
 
     respond_to do |format|
       if @invitacione.update_attributes(params[:invitacione])
-        format.html { redirect_to @invitacione, notice: 'Invitacione was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to @invitacione, :notice => 'Invitacione was successfully updated.' }
+
       else
-        format.html { render action: "edit" }
-        format.json { render json: @invitacione.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+
       end
     end
   end
@@ -78,7 +77,7 @@ class InvitacionesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to invitaciones_url }
-      format.json { head :no_content }
+
     end
   end
 end
