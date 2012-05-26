@@ -19,7 +19,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @reservas = Reserva.find_all_by_id_user(params[:id])
-
+    invitacion = Invitacione.find_all_by_user_id(params[:id])
+    @invitaciones = []
+    invitacion.each do |resul|
+       @invitaciones <<  [User.find(resul.user_origen), Reserva.find(resul.reserva_id),resul.id]
+    end
     respond_to do |format|
       format.html # show.html.erb
 

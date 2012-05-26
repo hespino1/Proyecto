@@ -12,23 +12,41 @@
   float: left;
 }
 
-#content .user_profile table {
-
-   border-spacing: 0;
+#content .user_info h2{
+  margin: 0;
+  background: green;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 3px;
 }
 
-#content .user_profile table tr td{
+
+#content .user_info{
+  border: solid 2px darkgreen;
+  border-radius: 3px;
+  width: 90%;
+  padding: 5px;
+}
+
+#content .user_info table{
+  width: 100%;
+  border-spacing: 0;
+}
+
+
+#content .user_info table tr td{
   border: 1px solid #dcdcdc;
   padding: 5px;
   text-align: center;
 
 }
 
-#content .user_profile table tr th{
+#content .user_info table tr th{
   border: 1px solid #dcdcdc;
   padding: 5px;
   text-align: center;
   margin: 0;
+  background: green;
   background: -moz-linear-gradient(green, #006400);
   background: -webkit-linear-gradient(green, #006400);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='green',endColorstr='#006400')";

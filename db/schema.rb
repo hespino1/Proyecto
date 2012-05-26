@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511204748) do
+ActiveRecord::Schema.define(:version => 20120523222709) do
+
+  create_table "invitaciones", :force => true do |t|
+    t.string   "user_id"
+    t.string   "reserva_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "user_origen"
+  end
 
   create_table "reservas", :force => true do |t|
     t.date     "fecha"

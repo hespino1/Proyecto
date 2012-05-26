@@ -1,8 +1,8 @@
 <div class="user">
 
     <div class="user_profile">
-        <p id="notice"><%= notice %></p>
-
+       <div class="user_info">
+        <h2 >Perfil</h2>
         <p>
           <b>Nombre:</b>
           <%= @user.nombre %>
@@ -20,37 +20,80 @@
 
         <%= link_to 'Editar Perfil', edit_user_path(@user) %>
         <% link_to 'Atras', users_path %>
+       </div>
+       <br>
+       <br>
+       <br>
+       <div class="user_info">
+             <h2>Mis Reservas</h2>
+             <br>
+             <% if @reservas.count.eql? 0 %>
+                No tiene ninguna reserva, hacer una
+             <% else %>
+                 <table>
+                      <tr>
+                        <th>Deporte</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th colspan="3">Operaciones</th>
+                      </tr>
+                      <% @reservas.each do |reserva|  %>
 
-        <h1>Reservas Activas</h1>
-            <table>
-              <tr>
-                <th>Deporte</th>
-                <th>Fecha</th>
-                <th>Hora</th>
-                <th colspan="2">Operaciones</th>
-              </tr>
-              <% @reservas.each do |reserva|  %>
+                      <tr>
+                        <td>Futbol</td>
+                        <td><%= reserva.fecha %></td>
+                        <td><%= reserva.hora %></td>
+                        <td><%= link_to 'Editar', edit_reserva_path(reserva) %></td>
+                        <td><%= link_to 'Eliminar', reserva, :confirm => 'Are you sure?', :method => :delete %></td>
+                        <td><%= "invitar " %></td>
 
-              <tr>
-                <td>Futbol</td>
-                <td><%= reserva.fecha %></td>
-                <td><%= reserva.hora %></td>
-                <td><%= link_to 'Editar', edit_reserva_path(reserva) %></td>
-                <td><%= link_to 'Eliminar', reserva, :confirm => 'Are you sure?', :method => :delete %></td>
 
-              </tr>
+                      </tr>
 
-              <%end%>
-            </table>
-          <br>
-          <br>
-          <br>
-        <%= link_to 'Nueva Reserva', new_reserva_path %>
+                      <%end%>
+                    </table>
+             <% end %>
+
+
+            <%= link_to 'Nueva Reserva', new_reserva_path %>
+       </div>
 
     </div>
 
+
+
     <div class="user_logo">
-      <%= image_tag("perfil.jpg") %>
+        <%= image_tag("perfil.jpg") %>
+        <br>
+        <br>
+
+        <div class="user_info">
+          <h2>Mis Invitaciones</h2>
+            <%if @invitaciones.count.eql? 0 %>
+                no tiene invitaciones
+            <% else %>
+            <table>
+                <tr>
+                    <th>Deporte</th>
+                    <th>Dia</th>
+                    <th>Me inivita</th>
+                    <th colspan="2">Operaciones</th>
+                </tr>
+
+                <br>
+                    <% @invitaciones.each do |invitacion| %>
+                        <tr>
+                          <td>Futbol</td>
+                          <td><%= invitacion[1].fecha %></td>
+                          <td><%= invitacion[0].nombre %></td>
+                          <td><%= link_to "Eliminar", "/invitaciones/#{invitacion[2]}", :confirm => "esta seguro?", :method => :delete %></td>
+                          <td>Aceptar</td>
+                        </tr>
+                <% end %>
+
+              </table>
+      <% end %>
+    </div>
     </div>
 
 </div>

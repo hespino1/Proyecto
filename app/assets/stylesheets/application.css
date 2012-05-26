@@ -13,7 +13,7 @@
 */
 body{
     background:  #f5f5f5 ;
-
+    margin: 0;
 }
 
 #header {
@@ -33,22 +33,9 @@ body{
 
 }
 
-#content{
-    width: 80%;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white;
-    min-height: 500px;
-    padding: 20px;
-    border: solid 2px darkGreen;
-    box-shadow: 6px 6px 5px darkGreen;
-    -moz-box-shadow: 6px 6px 5px darkGreen;
-    -webkit-box-shadow: 6px 6px 5px darkGreen;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-
+#header .logo a img{
+    padding-top: 10px;
+    width: 50%;
 }
 
 #header .user_options{
@@ -56,9 +43,10 @@ body{
     color: white;
     float: right;
     border-radius: 5px;
-    margin-top: 15px;
+    margin-top: 1%;
     border-bottom: solid #006400;
     margin-right: 90px;
+    width: 35%;
 
 
 
@@ -94,6 +82,7 @@ body{
 
 #header .user_options ul li a:hover{
     color: white;
+    background: green;
     background: -moz-linear-gradient(green, #006400);
     background: -webkit-linear-gradient(green, #006400);
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='green',endColorstr='#006400')";
@@ -101,6 +90,31 @@ body{
     padding: 18px;
 
 
+}
+
+
+
+#content{
+    width: 80%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    min-height: 500px;
+    padding: 20px;
+    border: solid 2px darkGreen;
+    box-shadow: 6px 6px 5px darkGreen;
+    -moz-box-shadow: 6px 6px 5px darkGreen;
+    -webkit-box-shadow: 6px 6px 5px darkGreen;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+}
+
+
+#content img{
+    width: 100%;
 }
 
 

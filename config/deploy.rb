@@ -3,7 +3,7 @@ set :user, "ubuntu"
 ssh_options[:keys] = ["/home/ruben/Documentos/respinos.pem"]
 set :app_name, "socialsports"
 set :branch, "master"
-set :repository,  "ssh://git@github.com:hespino1/Proyecto.git"
+set :repository,  "https://rderoldan1@github.com/hespino1/Proyecto.git"
 set :use_sudo, true
 
 role :app, "107.22.95.239"

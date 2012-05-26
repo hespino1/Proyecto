@@ -1,4 +1,6 @@
 P2::Application.routes.draw do
+  resources :invitaciones
+
   resources :reservas
 
   get "sessions/index"
