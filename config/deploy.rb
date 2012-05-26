@@ -68,3 +68,12 @@ require 'bundler/capistrano'
 
 # Compilar assets para rails 3.1
 load "deploy/assets"
+
+namespace :apache do
+  [:stop, :start, :restart, :reload].each do |action|
+    desc "#{action.to_s.capitalize} Apache"
+    task action, :roles => :web do
+      invoke_command "/etc/init.d/apache2 #{action.to_s}", :via => run_method
+    end
+  end
+end
