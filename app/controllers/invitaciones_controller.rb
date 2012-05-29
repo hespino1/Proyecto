@@ -1,4 +1,6 @@
 class InvitacionesController < ApplicationController
+  before_filter :logged_user
+
   # GET /invitaciones
   # GET /invitaciones.json
   def index
@@ -92,6 +94,14 @@ class InvitacionesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to invitaciones_url }
+
+    end
+  end
+  private
+
+  def logged_user
+    if signed_in?.eql? false
+      redirect_to(root_path, :alert => "tiene que estar logueado")
 
     end
   end
