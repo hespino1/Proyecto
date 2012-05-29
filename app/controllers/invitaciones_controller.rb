@@ -25,6 +25,12 @@ class InvitacionesController < ApplicationController
   def new
     @invitacione = Invitacione.new
     users = User.all()
+    invitados = Invitacione.find_all_by_reserva_id(params[:reserva])
+    @invitados = []
+    invitados.each do |b|
+       @invitados << User.find(b.user_id)
+    end
+
     @users = []
     users.each do |user|
       if !user.id.eql? get_id.to_i
