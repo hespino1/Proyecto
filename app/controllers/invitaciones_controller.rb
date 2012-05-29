@@ -61,7 +61,7 @@ class InvitacionesController < ApplicationController
 
     respond_to do |format|
       if Invitacione.create(:user_id => params[:user_id], :reserva_id => params[:reserva_id], :user_origen => get_id)
-        format.html { redirect_to user_path(get_id), :notice => 'invitacione was successfully created.' }
+        format.html { redirect_to new_invitacione_path( :reserva => params[:reserva_id]), :notice => 'invitacione was successfully created.' }
 
       else
         format.html { render :action => "new" }
