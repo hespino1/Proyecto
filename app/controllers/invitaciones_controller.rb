@@ -24,6 +24,13 @@ class InvitacionesController < ApplicationController
   # GET /invitaciones/new.json
   def new
     @invitacione = Invitacione.new
+    users = User.all()
+    @users = []
+    users.each do |user|
+      if !user.id.eql? get_id.to_i
+          @users << user
+      end
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,12 +46,14 @@ class InvitacionesController < ApplicationController
   # POST /invitaciones
   # POST /invitaciones.json
   def create
-    params[:invitacione][:user_origen] = get_id
-
+    #params[:invitacione][:user_origen] = get_id
+    puts "-"*60
+    puts params[:user_id]
+    puts params[:reserva_id]
 
     respond_to do |format|
-      if @invitacione.save
-        format.html { redirect_to @invitacione, :notice => 'invitacione was successfully created.' }
+      if Invitacione.create(:user_id => params[:user_id], :reserva_id => params[:reserva_id], :user_origen => get_id)
+        format.html { redirect_to user_path(get_id), :notice => 'invitacione was successfully created.' }
 
       else
         format.html { render :action => "new" }

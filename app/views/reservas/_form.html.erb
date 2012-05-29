@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :hora %><br />
-    <%= f.text_field :hora %>
+    <%= f.select :hora, horas, :prompt => "Seleccione una hora" %>
   </div>
   <div class="field">
     <% f.hidden_field :id_user, :value => get_id%>

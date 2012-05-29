@@ -45,7 +45,7 @@
                         <td><%= reserva.hora %></td>
                         <td><%= link_to 'Editar', edit_reserva_path(reserva) %></td>
                         <td><%= link_to 'Eliminar', reserva, :confirm => 'Are you sure?', :method => :delete %></td>
-                        <td><%= "invitar " %></td>
+                        <td><%= link_to "Invitar ", new_invitacione_path(:reserva => reserva.id) %></td>
 
 
                       </tr>

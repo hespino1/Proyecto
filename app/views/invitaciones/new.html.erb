@@ -2,4 +2,26 @@
 
 <%= render 'form' %>
 
+<table>
+   <tr>
+        <th>Nombre de Usuario</th>
+        <th>Correo</th>
+        <th>Opciones</th>
+   </tr>
+
+  <%= @users %>
+   <%@users.each do |user| %>
+        <tr>
+          <%= get_id %>
+          <%= user.id.eql? get_id.to_i %>
+          <td><%= user.nombre %></td>
+          <td><%= user.correo %></td>
+          <td><%= link_to "Invitar", invitaciones_path(@invitacione, :reserva_id => params[:reserva], :user_id => user.id), :method => "post"  %></td>
+        </tr>
+
+    <% end %>
+
+</table>
+
+
 <%= link_to 'Back', invitaciones_path %>

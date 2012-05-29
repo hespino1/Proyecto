@@ -24,7 +24,7 @@ body{
     padding-left: 10%;
     margin-left: -6px;
     margin-right: -6px;
-    border-bottom:solid darkGreen;
+    border-bottom: solid 3px Green;
     padding-top: 15px;
     color: white;
     background: -moz-linear-gradient(green, #006400);
@@ -42,13 +42,8 @@ body{
 
     color: white;
     float: right;
-    border-radius: 5px;
-    margin-top: 1%;
-    border-bottom: solid #006400;
+    margin-top: 20px;
     margin-right: 90px;
-    width: 35%;
-
-
 
 }
 
@@ -67,7 +62,7 @@ body{
 #header .user_options ul li{
     display: inline-block;
     text-decoration: none;
-    margin: auto;
+
 
 }
 
@@ -76,6 +71,8 @@ body{
     color: white;
     padding: 18px;
     font-size: 14px;
+    border-radius: 5px;
+    border-bottom: solid 3px #006400;
 
 
 }
