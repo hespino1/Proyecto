@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 <div class="user_profile">
     <p id="notice"><%= notice %></p>
@@ -40,67 +40,23 @@
 
           </tr>
 
-          <%end%>
+
+        <%end%>
+
+
         </table>
       <br>
       <br>
       <br>
     <%= link_to 'Nueva Reserva', new_reserva_path %>
-=======
-<div class="user">
+  </div>
+<br>
+<br>
+<br>
+<br>
+  <div class="user_logo">
+    <%= image_tag("perfil.jpg") %>
+  </div>
 
-    <div class="user_profile">
-        <p id="notice"><%= notice %></p>
-
-        <p>
-          <b>Nombre:</b>
-          <%= @user.nombre %>
-        </p>
-
-        <p>
-          <b>Cedula:</b>
-          <%= @user.cedula %>
-        </p>
-
-        <p>
-          <b>Correo:</b>
-          <%= @user.correo %>
-        </p>
-
-        <%= link_to 'Editar Perfil', edit_user_path(@user) %>
-        <% link_to 'Atras', users_path %>
-
-        <h1>Reservas Activas</h1>
-            <table>
-              <tr>
-                <th>Deporte</th>
-                <th>Fecha</th>
-                <th>Hora</th>
-                <th colspan="2">Operaciones</th>
-              </tr>
-              <% @reservas.each do |reserva|  %>
-
-              <tr>
-                <td>Futbol</td>
-                <td><%= reserva.fecha %></td>
-                <td><%= reserva.hora %></td>
-                <td><%= link_to 'Editar', edit_reserva_path(reserva) %></td>
-                <td><%= link_to 'Eliminar', reserva, :confirm => 'Are you sure?', :method => :delete %></td>
-
-              </tr>
-
-              <%end%>
-            </table>
-          <br>
-          <br>
-          <br>
-        <%= link_to 'Nueva Reserva', new_reserva_path %>
-
-    </div>
-
-    <div class="user_logo">
-      <%= image_tag("perfil.jpg") %>
-    </div>
->>>>>>> 27be46e8d84c50b489f92f0f144ac79eb7f6017f
 
 </div>
