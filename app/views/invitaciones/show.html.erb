@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @invitacione.user_id %>
+</p>
+
+<p>
+  <b>Reserva:</b>
+  <%= @invitacione.reserva_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_invitacione_path(@invitacione) %> |
+<%= link_to 'Back', invitaciones_path %>

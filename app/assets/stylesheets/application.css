@@ -13,7 +13,7 @@
 */
 body{
     background:  #f5f5f5 ;
-
+    margin: 0;
 }
 
 #header {
@@ -24,7 +24,7 @@ body{
     padding-left: 10%;
     margin-left: -6px;
     margin-right: -6px;
-    border-bottom:solid darkGreen;
+    border-bottom: solid 3px Green;
     padding-top: 15px;
     color: white;
     background: -moz-linear-gradient(green, #006400);
@@ -32,6 +32,64 @@ body{
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='green',endColorstr='#006400')";
 
 }
+
+#header .logo a img{
+    padding-top: 10px;
+    width: 50%;
+}
+
+#header .user_options{
+
+    color: white;
+    float: right;
+    margin-top: 20px;
+    margin-right: 90px;
+
+}
+
+#header .logo{
+    width: 50%;
+    float: left;
+
+}
+
+#header .user_options ul{
+    list-style: none;
+    display: inline-block;
+
+}
+
+#header .user_options ul li{
+    display: inline-block;
+    text-decoration: none;
+
+
+}
+
+#header .user_options ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 18px;
+    font-size: 14px;
+    border-radius: 5px;
+    border-bottom: solid 3px #006400;
+
+
+}
+
+#header .user_options ul li a:hover{
+    color: white;
+    background: green;
+    background: -moz-linear-gradient(green, #006400);
+    background: -webkit-linear-gradient(green, #006400);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='green',endColorstr='#006400')";
+    font-weight: bold;
+    padding: 18px;
+
+
+}
+
+
 
 #content{
     width: 80%;
@@ -51,56 +109,9 @@ body{
 
 }
 
-#header .user_options{
 
-    color: white;
-    float: right;
-    border-radius: 5px;
-    margin-top: 15px;
-    border-bottom: solid #006400;
-    margin-right: 90px;
-
-
-
-}
-
-#header .logo{
-    width: 50%;
-    float: left;
-
-}
-
-#header .user_options ul{
-    list-style: none;
-    display: inline-block;
-
-}
-
-#header .user_options ul li{
-    display: inline-block;
-    text-decoration: none;
-    margin: auto;
-
-}
-
-#header .user_options ul li a{
-    text-decoration: none;
-    color: white;
-    padding: 18px;
-    font-size: 14px;
-
-
-}
-
-#header .user_options ul li a:hover{
-    color: white;
-    background: -moz-linear-gradient(green, #006400);
-    background: -webkit-linear-gradient(green, #006400);
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='green',endColorstr='#006400')";
-    font-weight: bold;
-    padding: 18px;
-
-
+#content img{
+    width: 100%;
 }
 
 

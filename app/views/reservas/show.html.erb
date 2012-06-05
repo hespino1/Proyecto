@@ -11,5 +11,16 @@
 </p>
 
 
+Invitar gente
+
+  <%# @users.each do |user| %>
+    <table>
+      <tr>
+        <td>nombre</td>
+        <td><%= link_to "invitar" %></td>
+      </tr>
+    </table>
+
+
 <%= link_to 'Edit', edit_reserva_path(@reserva) %> |
 <%= link_to 'Back', reservas_path %>

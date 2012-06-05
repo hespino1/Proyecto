@@ -11,13 +11,22 @@
     </div>
   <% end %>
 
+  <% deportes.each do |line| %>
+      <%= line %>
+  <% end %>
+
+
   <div class="field">
     <%= f.label :fecha %><br />
     <%= f.date_select :fecha %>
   </div>
+    <div class="field">
+      <%= f.label :deporte %><br />
+      <%= f.select :deporte, deportes %>
+    </div>
   <div class="field">
     <%= f.label :hora %><br />
-    <%= f.text_field :hora %>
+    <%= f.select :hora, horas, :prompt => "Seleccione una hora" %>
   </div>
   <div class="field">
     <% f.hidden_field :id_user, :value => get_id%>

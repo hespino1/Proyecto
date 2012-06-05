@@ -5,20 +5,20 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-</head>
+ </head>
 <body>
 
     <div id="header">
       <div class="logo">
-          <h1>SocialSports</h1>
-          <p>La mejor forma de armar partidos</p>
+
+          <%= link_to image_tag('logo1.png'), root_path %>
       </div>
       <div class="user_options">
         <ul>
           <li><%=  link_to 'Inicio', root_path %></li>
           <li>
             <%if signed_in? %>
-                <%= link_to get_nombre ,user_path(get_id)%>
+                <%= link_to "Perfil" ,user_path(get_id)%>
             <%end%>
           </li>
           <li><%if signed_in? %>
@@ -35,12 +35,8 @@
       <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value.capitalize %></div>
       <%  end %>
-          <script type="text/javascript">
-              setTimeout("new Effect.Fade('flash');", 15000)
-          </script>
-
-
-      <%= yield %>
+       <%= yield %>
+      <div style="clear: both;"></div>
     </div>
     <div id="footer">
         <div class="footer left">
@@ -57,6 +53,7 @@
 
           </ul>
         </div>
+
     </div>
 
 

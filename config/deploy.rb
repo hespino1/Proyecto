@@ -3,7 +3,7 @@ set :user, "ubuntu"
 ssh_options[:keys] = ["/home/ruben/Documentos/respinos.pem"]
 set :app_name, "socialsports"
 set :branch, "master"
-set :repository,  "ssh://git@github.com:hespino1/Proyecto.git"
+set :repository,  "https://rderoldan1@github.com/hespino1/Proyecto.git"
 set :use_sudo, true
 
 role :app, "107.22.95.239"
@@ -68,3 +68,12 @@ require 'bundler/capistrano'
 
 # Compilar assets para rails 3.1
 load "deploy/assets"
+
+namespace :apache do
+  [:stop, :start, :restart, :reload].each do |action|
+    desc "#{action.to_s.capitalize} Apache"
+    task action, :roles => :web do
+      invoke_command "sudo /etc/init.d/apache2 #{action.to_s}", :via => run_method
+    end
+  end
+end
