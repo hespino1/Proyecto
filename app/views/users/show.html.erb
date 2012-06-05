@@ -40,7 +40,7 @@
                       <% @reservas.each do |reserva|  %>
 
                       <tr>
-                        <td>Futbol</td>
+                        <td><%= reserva.deporte %></td>
                         <td><%= reserva.fecha %></td>
                         <td><%= reserva.hora %></td>
                         <td><%= link_to 'Editar', edit_reserva_path(reserva) %></td>

@@ -12,4 +12,15 @@ module ReservasHelper
     horas
 
   end
+
+  def deportes
+    Dir.pwd
+    deportes = []
+    a = File.open('deportes.txt')
+    a.each do |line|
+      deportes << line
+    end
+    deportes
+
+  end
 end
