@@ -39,6 +39,7 @@ class InvitacionesController < ApplicationController
           @users << user
       end
     end
+    @users = @users - @invitados
 
     respond_to do |format|
       format.html # new.html.erb
@@ -89,11 +90,14 @@ class InvitacionesController < ApplicationController
   # DELETE /invitaciones/1
   # DELETE /invitaciones/1.json
   def destroy
-    @invitacione = Invitacione.find(params[:id])
+    if request.path_parameters['controller'].eql? "/users"
+
+    end
+      @invitacione = Invitacione.find_by_user_id(params[:id])
     @invitacione.destroy
 
     respond_to do |format|
-      format.html { redirect_to invitaciones_url }
+      format.html { redirect_to request.referer }
 
     end
   end

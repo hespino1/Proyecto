@@ -34,7 +34,7 @@
                 <tr>
                     <td><%= invitado.nombre %></td>
                     <td><%= invitado.correo %></td>
-                    <td><%= link_to 'Eliminar', invitado, :confirm => 'Are you sure?', :method=> :delete  %></td>
+                    <td><%= link_to 'Eliminar', invitacione_path(invitado), :confirm => 'Are you sure?', :method=> :delete  %></td>
                 </tr>
             <% end %>
         </table>
