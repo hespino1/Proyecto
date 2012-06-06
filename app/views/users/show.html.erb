@@ -45,7 +45,7 @@
                         <td><%= reserva.fecha %></td>
                         <td><%= reserva.hora %></td>
                         <td><%= link_to 'Editar', edit_reserva_path(reserva) %></td>
-                        <td><%= link_to 'Eliminar', reserva, :confirm => 'Are you sure?', :method => :delete %></td>
+                        <td><%= link_to 'Eliminar', reserva, :confirm => 'Esta seguro?', :method => :delete %></td>
                         <td><%= link_to "Invitar ", new_invitacione_path(:reserva => reserva.id) %></td>
 
 
@@ -78,7 +78,7 @@
                     <th>Deporte</th>
                     <th>Dia</th>
                     <th>Me inivita</th>
-                    <th colspan="2">Operaciones</th>
+                    <th colspan="2">Estado</th>
                 </tr>
 
                 <br>
@@ -87,8 +87,8 @@
                           <td><%= invitacion[1].deporte %></td>
                           <td><%= invitacion[1].fecha %></td>
                           <td><%= invitacion[0].nombre %></td>
-                          <td><%= link_to "Eliminar", "/invitaciones/#{invitacion[2]}", :confirm => "esta seguro?", :method => :delete %></td>
-                          <td>Aceptar</td>
+                          <td><%= link_to "Rechazar", "/invitaciones/#{invitacion[2]}", :confirm => "esta seguro?", :method => :delete %></td>
+                          <td>Aceptado</td>
                         </tr>
                 <% end %>
 

@@ -1,7 +1,7 @@
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "errore") %> prohiben que el usuarios sea creado:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> prohiben que el usuarios sea creado:</h2>
 
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
@@ -28,6 +28,6 @@
       <%= f.password_field :password %>
     </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Aceptar" %>
   </div>
 <% end %>
