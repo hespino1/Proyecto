@@ -39,6 +39,7 @@ class InvitacionesController < ApplicationController
           @users << user
       end
     end
+    @users = @users - @invitados
 
     respond_to do |format|
       format.html # new.html.erb
@@ -61,7 +62,7 @@ class InvitacionesController < ApplicationController
 
     respond_to do |format|
       if Invitacione.create(:user_id => params[:user_id], :reserva_id => params[:reserva_id], :user_origen => get_id)
-        format.html { redirect_to new_invitacione_path( :reserva => params[:reserva_id]), :notice => 'invitacione was successfully created.' }
+        format.html { redirect_to new_invitacione_path( :reserva => params[:reserva_id]), :notice => 'El usuario ha sido invitado' }
 
       else
         format.html { render :action => "new" }
@@ -89,11 +90,14 @@ class InvitacionesController < ApplicationController
   # DELETE /invitaciones/1
   # DELETE /invitaciones/1.json
   def destroy
-    @invitacione = Invitacione.find(params[:id])
+    if request.path_parameters['controller'].eql? "/users"
+
+    end
+      @invitacione = Invitacione.find_by_user_id(params[:id])
     @invitacione.destroy
 
     respond_to do |format|
-      format.html { redirect_to invitaciones_url }
+      format.html { redirect_to request.referer }
 
     end
   end
@@ -101,7 +105,7 @@ class InvitacionesController < ApplicationController
 
   def logged_user
     if signed_in?.eql? false
-      redirect_to(root_path, :alert => "tiene que estar logueado")
+      redirect_to(root_path, :alert => "El usuario tiene que estar logueado")
 
     end
   end

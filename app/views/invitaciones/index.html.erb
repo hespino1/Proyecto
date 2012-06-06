@@ -15,7 +15,7 @@
     <td><%= invitacione.reserva_id %></td>
     <td><%= link_to 'Show', invitacione %></td>
     <td><%= link_to 'Edit', edit_invitacione_path(invitacione) %></td>
-    <td><%= link_to 'Destroy', invitacione, :confirm=> 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', invitacione_path(invitacione.user_id), :confirm=> 'Esta seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

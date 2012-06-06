@@ -17,12 +17,14 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
-    @reservas = Reserva.find_all_by_id_user(params[:id])
-    invitacion = Invitacione.find_all_by_user_id(params[:id])
+    puts @user = User.find(params[:id])
+    puts @total = Invitacione.all
+    puts @reservas = Reserva.find_all_by_id_user(params[:id])
+    puts invitacion = Invitacione.find_all_by_user_id(params[:id])
     @invitaciones = []
     invitacion.each do |resul|
-       @invitaciones <<  [User.find(resul.user_origen), Reserva.find(resul.reserva_id),resul.id]
+      puts resul.user_id
+      puts @invitaciones <<  [User.find(resul.user_origen), Reserva.find_by_id_user(resul.user_origen),resul.user_id]
     end
     respond_to do |format|
       format.html # show.html.erb
@@ -68,7 +70,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, :notice=> 'User was successfully updated.' }
+        format.html { redirect_to @user, :notice=> 'Los datos del usuario han sido actualizados' }
 
       else
         format.html { render :action=> "edit" }
@@ -93,7 +95,7 @@ class UsersController < ApplicationController
 
   def logged_user
     if signed_in?.eql? false
-      redirect_to(root_path, :alert => "tiene que estar logueado")
+      redirect_to(root_path, :alert => "Tiene que estar logueado")
 
     end
   end

@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :fecha %><br />
-    <%= f.date_select :fecha %>
+    <%= f.date_select :fecha%>
   </div>
     <div class="field">
       <%= f.label :deporte %><br />
-      <%= f.select :deporte, deportes %>
+      <%= f.select :deporte, deportes, :prompt => " seleccione un deporte"  %>
     </div>
   <div class="field">
     <%= f.label :hora %><br />

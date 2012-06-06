@@ -1,7 +1,7 @@
 <h1>Invitaciones</h1>
    <div class="user_profile">
     <div class="user_info">
-        <h2> Gente a invitar  (<%= @users.count %>) </h2>
+        <h2> Personas a Invitar  (<%= @users.count %>) </h2>
         <table>
            <tr>
                 <th>Nombre de Usuario</th>
@@ -23,7 +23,7 @@
    </div>
     <div class="user_logo">
     <div class="user_info">
-        <h2>Gente Invitada  (<%= @invitados.count %>)</h2>
+        <h2>Personas Invitadas  (<%= @invitados.count %>)</h2>
         <table>
             <tr>
                 <th>Nombre</th>
@@ -34,7 +34,7 @@
                 <tr>
                     <td><%= invitado.nombre %></td>
                     <td><%= invitado.correo %></td>
-                    <td><%= link_to 'Eliminar', invitado, :confirm => 'Are you sure?', :method=> :delete  %></td>
+                    <td><%= link_to 'Eliminar', invitacione_path(invitado), :confirm => 'Esta seguro?', :method=> :delete  %></td>
                 </tr>
             <% end %>
         </table>
@@ -43,4 +43,4 @@
 
 
 
-<%= link_to 'Back', user_path(get_id) %>
+<%= link_to 'Atras', user_path(get_id) %>

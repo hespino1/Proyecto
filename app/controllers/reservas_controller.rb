@@ -48,7 +48,7 @@ class ReservasController < ApplicationController
 
     respond_to do |format|
       if @reserva.save
-        format.html { redirect_to user_path(get_id), :notice => 'Reserva was successfully created.' }
+        format.html { redirect_to user_path(get_id), :notice => 'Su reserva fue creada exitosamente.' }
       else
         format.html { render :action => "new" }
 
@@ -66,7 +66,7 @@ class ReservasController < ApplicationController
         format.html { redirect_to user_path(get_id), :notice => 'Su reserva fue actualizada exitosamente.' }
 
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "editar" }
 
       end
     end
@@ -77,9 +77,12 @@ class ReservasController < ApplicationController
   def destroy
     @reserva = Reserva.find(params[:id])
     @reserva.destroy
-
+    @invitacion = Invitacione.find_all_by_reserva_id(params[:id])
+    @invitacion.each do |invitacion|
+      invitacion.destroy
+    end
     respond_to do |format|
-      format.html { redirect_to user_path(get_id) }
+      format.html { redirect_to user_path(get_id) , :notice=> 'Su reserva ha sido eliminada'}
 
     end
   end

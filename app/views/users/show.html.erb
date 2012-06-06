@@ -40,7 +40,7 @@
                       </tr>
                       <% @reservas.each do |reserva|  %>
 
-                      <tr>
+                       <tr>
                         <td><%= reserva.deporte %></td>
                         <td><%= reserva.fecha %></td>
                         <td><%= reserva.hora %></td>
@@ -84,7 +84,7 @@
                 <br>
                     <% @invitaciones.each do |invitacion| %>
                         <tr>
-                          <td>Futbol</td>
+                          <td><%= invitacion[1].deporte %></td>
                           <td><%= invitacion[1].fecha %></td>
                           <td><%= invitacion[0].nombre %></td>
                           <td><%= link_to "Eliminar", "/invitaciones/#{invitacion[2]}", :confirm => "esta seguro?", :method => :delete %></td>
